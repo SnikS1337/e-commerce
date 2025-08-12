@@ -1,17 +1,16 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/common/helper/navigator/app_navigator.dart';
 import 'package:untitled/common/widgets/appbar/app_bar.dart';
 import 'package:untitled/common/widgets/button/basic_app_button.dart';
 import 'package:untitled/presentation/auth/pages/enter_password.dart';
 
-class SigninPage extends StatelessWidget {
-  const SigninPage({super.key});
+class ForgotPasswordPage extends StatelessWidget {
+  const ForgotPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppbar(hideBack: true),
+      appBar: const BasicAppbar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
         child: Column(
@@ -23,7 +22,6 @@ class SigninPage extends StatelessWidget {
             const SizedBox(height: 20),
             _continueButton(context),
             const SizedBox(height: 20),
-            _createAccount(context),
           ],
         ),
       ),
@@ -32,7 +30,7 @@ class SigninPage extends StatelessWidget {
 
   Widget _signinText(BuildContext context) {
     return const Text(
-      'Sign in',
+      'Forgot Password',
       style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
     );
   }
@@ -47,21 +45,6 @@ class SigninPage extends StatelessWidget {
         AppNavigator.push(context, const EnterPasswordPage());
       },
       title: 'Continue',
-    );
-  }
-
-  Widget _createAccount(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        children: [
-          TextSpan(text: "Don't have an account? "),
-          TextSpan(
-            text: 'Create one',
-            recognizer: TapGestureRecognizer()..onTap = () {},
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
     );
   }
 }

@@ -5,8 +5,8 @@ import 'package:untitled/common/widgets/appbar/app_bar.dart';
 import 'package:untitled/common/widgets/button/basic_app_button.dart';
 import 'package:untitled/presentation/auth/pages/enter_password.dart';
 
-class SigninPage extends StatelessWidget {
-  const SigninPage({super.key});
+class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {

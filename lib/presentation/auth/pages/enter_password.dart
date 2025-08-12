@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:untitled/common/helper/navigator/app_navigator.dart';
 import 'package:untitled/common/widgets/appbar/app_bar.dart';
 import 'package:untitled/common/widgets/button/basic_app_button.dart';
-import 'package:untitled/presentation/auth/pages/enter_password.dart';
+import 'package:untitled/presentation/auth/pages/forgot_password.dart';
 
-class SigninPage extends StatelessWidget {
-  const SigninPage({super.key});
+class EnterPasswordPage extends StatelessWidget {
+  const EnterPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppbar(hideBack: true),
+      appBar: const BasicAppbar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
         child: Column(
@@ -19,11 +19,11 @@ class SigninPage extends StatelessWidget {
           children: [
             _signinText(context),
             const SizedBox(height: 20),
-            _emailField(context),
+            _passwordField(context),
             const SizedBox(height: 20),
-            _continueButton(context),
+            _continueButton(),
             const SizedBox(height: 20),
-            _createAccount(context),
+            _forgotPassword(context),
           ],
         ),
       ),
@@ -37,27 +37,25 @@ class SigninPage extends StatelessWidget {
     );
   }
 
-  Widget _emailField(BuildContext context) {
-    return TextField(decoration: InputDecoration(hintText: 'Enter email'));
+  Widget _passwordField(BuildContext context) {
+    return TextField(decoration: InputDecoration(hintText: 'Enter Password'));
   }
 
-  Widget _continueButton(BuildContext context) {
-    return BasicAppButton(
-      onPressed: () {
-        AppNavigator.push(context, const EnterPasswordPage());
-      },
-      title: 'Continue',
-    );
+  Widget _continueButton() {
+    return BasicAppButton(onPressed: () {}, title: 'Continue');
   }
 
-  Widget _createAccount(BuildContext context) {
+  Widget _forgotPassword(BuildContext context) {
     return RichText(
       text: TextSpan(
         children: [
-          TextSpan(text: "Don't have an account? "),
+          TextSpan(text: "Forgot password? "),
           TextSpan(
-            text: 'Create one',
-            recognizer: TapGestureRecognizer()..onTap = () {},
+            text: 'Reset',
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                AppNavigator.push(context, ForgotPasswordPage());
+              },
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ],
