@@ -6,7 +6,7 @@ class AppTheme {
   static final appTheme = ThemeData(
     primaryColor: AppColors.primary,
     scaffoldBackgroundColor: AppColors.background,
-    brightness: Brightness.light,
+    brightness: Brightness.dark,
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: AppColors.secondBackground,
