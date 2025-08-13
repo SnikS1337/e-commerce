@@ -33,7 +33,10 @@ class SigninPage extends StatelessWidget {
   Widget _signinText(BuildContext context) {
     return const Text(
       'Sign in',
-      style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+      style: TextStyle(
+        fontSize: 32,
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 
@@ -44,7 +47,10 @@ class SigninPage extends StatelessWidget {
   Widget _continueButton(BuildContext context) {
     return BasicAppButton(
       onPressed: () {
-        AppNavigator.push(context, const EnterPasswordPage());
+        AppNavigator.push(
+          context,
+          const EnterPasswordPage(),
+        );
       },
       title: 'Continue',
     );

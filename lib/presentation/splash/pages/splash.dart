@@ -24,7 +24,11 @@ class SplashPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColors.primary,
         body: Center(
-          child: SvgPicture.asset(AppVectors.appLogo, height: 200, width: 200),
+          child: SvgPicture.asset(
+            AppVectors.appLogo,
+            height: 200,
+            width: 200,
+          ),
         ),
       ),
     );

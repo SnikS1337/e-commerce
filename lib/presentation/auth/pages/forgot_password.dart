@@ -12,7 +12,10 @@ class ForgotPasswordPage extends StatelessWidget {
     return Scaffold(
       appBar: const BasicAppbar(),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 40,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -31,7 +34,10 @@ class ForgotPasswordPage extends StatelessWidget {
   Widget _signinText(BuildContext context) {
     return const Text(
       'Forgot Password',
-      style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+      style: TextStyle(
+        fontSize: 32,
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 
